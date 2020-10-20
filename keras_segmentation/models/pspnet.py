@@ -98,7 +98,7 @@ def resnet50_pspnet(n_classes,  input_height=384, input_width=576):
     return model
 
 
-def pspnet_50(n_classes,  input_height=473, input_width=473):
+def pspnet_50(n_classes,  input_height=320, input_width=176):
     from ._pspnet_2 import _build_pspnet
 
     nb_classes = n_classes
@@ -111,7 +111,7 @@ def pspnet_50(n_classes,  input_height=473, input_width=473):
     return model
 
 
-def pspnet_101(n_classes,  input_height=473, input_width=473):
+def pspnet_101(n_classes,  input_height=320, input_width=176):
     from ._pspnet_2 import _build_pspnet
 
     nb_classes = n_classes
