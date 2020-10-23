@@ -203,7 +203,7 @@ def ResNet(inp, layers):
 
 
 def interp_block(prev_layer, level, feature_map_shape, input_shape):
-    if input_shape == (224, 320):
+    if input_shape == (473, 473):
         kernel_strides_map = {1: 60,
                               2: 30,
                               3: 20,
