@@ -42,10 +42,10 @@ def pool_block(feats, pool_factor):
     return x
 
 
-def _pspnet(n_classes, encoder,  input_height=224, input_width=320):
+def _pspnet(n_classes, encoder,  input_height=384, input_width=576):
 
-   # assert input_height % 192 == 0
-    # assert input_width % 192 == 0
+    assert input_height % 192 == 0
+    assert input_width % 192 == 0
 
     img_input, levels = encoder(
         input_height=input_height,  input_width=input_width)
@@ -74,7 +74,7 @@ def _pspnet(n_classes, encoder,  input_height=224, input_width=320):
     return model
 
 
-def pspnet(n_classes,  input_height=224, input_width=320):
+def pspnet(n_classes,  input_height=384, input_width=576):
 
     model = _pspnet(n_classes, vanilla_encoder,
                     input_height=input_height, input_width=input_width)
@@ -82,7 +82,7 @@ def pspnet(n_classes,  input_height=224, input_width=320):
     return model
 
 
-def vgg_pspnet(n_classes,  input_height=224, input_width=320):
+def vgg_pspnet(n_classes,  input_height=384, input_width=576):
 
     model = _pspnet(n_classes, get_vgg_encoder,
                     input_height=input_height, input_width=input_width)
@@ -90,7 +90,7 @@ def vgg_pspnet(n_classes,  input_height=224, input_width=320):
     return model
 
 
-def resnet50_pspnet(n_classes,  input_height=224, input_width=320):
+def resnet50_pspnet(n_classes,  input_height=384, input_width=576):
 
     model = _pspnet(n_classes, get_resnet50_encoder,
                     input_height=input_height, input_width=input_width)
@@ -98,7 +98,7 @@ def resnet50_pspnet(n_classes,  input_height=224, input_width=320):
     return model
 
 
-def pspnet_50(n_classes,  input_height=224, input_width=320):
+def pspnet_50(n_classes,  input_height=473, input_width=473):
     from ._pspnet_2 import _build_pspnet
 
     nb_classes = n_classes
@@ -111,7 +111,7 @@ def pspnet_50(n_classes,  input_height=224, input_width=320):
     return model
 
 
-def pspnet_101(n_classes,  input_height=224, input_width=320):
+def pspnet_101(n_classes,  input_height=473, input_width=473):
     from ._pspnet_2 import _build_pspnet
 
     nb_classes = n_classes
